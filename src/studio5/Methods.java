@@ -36,17 +36,20 @@ public class Methods {
 		// TODO: Draw the remaining rings of the bull's eye
 		// Blue ring with 3.0/4.0 the radius
 		// suggested rgb values: 0, 109, 219
-
+		StdDraw.setPenColor(0, 109, 219); 
+		StdDraw.filledCircle(x, y, (3.0/4.0)*radius);
 		
 
 		// Red ring with 1.0/2.0 the radius
 		// suggested rgb values: 146, 0, 0
-
+		StdDraw.setPenColor(146, 0, 0); 
+		StdDraw.filledCircle(x,  y, (1.0/2.0)*radius); 
 		
 
 		// Yellow ring with 1.0/4.0 the radius
 		// suggested rgb values: 255, 255, 109
-
+		StdDraw.setPenColor(255, 255, 109); 
+		StdDraw.filledCircle(x, y, (1.0/4.0)*radius);  
 		
 	}
 
@@ -64,6 +67,15 @@ public class Methods {
 	public static String substituteAll(String source, char target, String replacement) {
 		String result = "";
 		// TODO: Finish this method
+		for (int i=0; i<source.length(); i++)
+		{
+			if (source.charAt(i) == target) {
+				result += replacement;
+			}
+			else {
+				result += source.charAt(i);				
+			}
+		}
 		
 		return result;
 	}
@@ -77,7 +89,10 @@ public class Methods {
 	public static int arraySum(int[] values) {
 		int sum = 0;
 		// FIXME: Compute the sum of the values in an array
-		
+		for (int i =0; i<values.length; i++)
+		{
+			sum += values[i];
+		}
 		return sum;
 	}
 
@@ -89,10 +104,12 @@ public class Methods {
 	 * @return and array of size that's filled with value
 	 */
 	public static int[] filledArray(int length, int value) {
-		int[] values = null; // FIXME: Create an array of the appropriate size
+		int[] values = new int [length]; // FIXME: Create an array of the appropriate size
+		for (int i=0; i<values.length; i++)
+		{
+			values[i]=value;
+		}
 		// TODO: Finish this method
-
-		
 
 		return values;
 	}
